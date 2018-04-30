@@ -8,8 +8,8 @@
 
 
 ## Create a working directory
-mkdir –p <path>/conjur-eval
-cd <path>/conjur-eval
+ mkdir workshop
+ cd workshop
 
 ## Download docker-compose.yml file
 curl -k -o docker-compose.yml https://www.conjur.org/get-started/eval/docker-compose.yml
