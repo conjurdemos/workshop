@@ -36,8 +36,7 @@ docker-compose run conjur
 
 ## Initialize client resource files
 ````
-# note escaped special char in account name
-conjur init -u https://eval.conjur.org -a foo\!@bar.com
+conjur init -u https://eval.conjur.org -a <your-account-id>
 ````
 
 ## Login as admin user – paste API key when prompted (you won't see it)
@@ -143,7 +142,7 @@ cat variable-and-host.yml
 ````
 
 
-# 8) Using Summon for secrets injection into variables
+# 8) Using Summon for ephemeral secrets management
 
 ## Retrieve the secret with Summon into an environment variable
 ````
