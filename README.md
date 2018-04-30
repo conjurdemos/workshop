@@ -36,7 +36,7 @@ docker-compose run conjur
 
 ## Initialize client resource files
 ````
-conjur init -u https://eval.conjur.org -a \<your-account-ID-from-browser\>
+conjur init -u https://eval.conjur.org -a <your-account-ID-from-browser>
 ````
 
 ## Login as admin user – paste API key when prompted
