@@ -32,14 +32,14 @@ docker-compose run conjur
 
 # 3) Initialize the client environment
 
-## Initialize client resource files - answer "yes" when prompted
+## Initialize client resource files - paste your acct ID, answer "yes" when prompted
 ````
-conjur init -u https://eval.conjur.org -a <your-account-id>
+conjur init -u https://eval.conjur.org -a <paste-your-account-id>
 ````
 
-## Login as admin user, paste API key when prompted (you won't see it)
+## Login as admin user, paste your account API key 
 ````
-conjur authn login -u admin
+conjur authn login -u admin -p <paste-your-account-API-key>
 ````
 
 ## List objects in Conjur 
