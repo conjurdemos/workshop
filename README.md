@@ -3,8 +3,9 @@
 
 # 1) Create an account:
 
-## In your browser:
- - Go to https://www.conjur.org/get-started/try-conjur.html
+## \<In a browser window\>
+
+## Go to https://www.conjur.org/get-started/try-conjur.html
  - Create an account.
  - Stay on this page when the account info is displayed.
  - You will need the Account ID and API key.
@@ -12,9 +13,13 @@
 
 # 2) Create the CLI container:
 
+## \<In a shell window\>
+
 ## Create a working directory
-- mkdir workshop
-- cd workshop
+```bash
+ mkdir workshop
+cd workshop
+```
 
 ## Download docker-compose.yml file
 - curl -k -o docker-compose.yml https://www.conjur.org/get-started/eval/docker-compose.yml
