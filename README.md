@@ -93,7 +93,12 @@ conjur variable value eval/secret; echo
 curl -k -o variable-and-host.yml https://www.conjur.org/get-started/eval/variable-and-host.yml
 ````
 
-## Load the variable-and-host.yml policy
+## Look at permissions for Machine ID - verify no update permission
+````
+cat variable-and-host.yml
+````
+
+## Load the variable-and-host.yml policy - note version number increments
 ````
 conjur policy load root variable-and-host.yml | tee roles.json
 ````
@@ -118,7 +123,7 @@ conjur list
 
 ## Fetch the secret as the Machine ID you created
 ````
-conjur variable value eval/secret
+conjur variable value eval/secret; echo
 ````
 
 ## Create a new value:
