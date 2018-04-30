@@ -1,5 +1,5 @@
-#                     CyberArk Conjur Open Source Lab
-
+# **CyberArk Conjur Open Source Lab**
+---
 
 # 1) Create an account:
 
