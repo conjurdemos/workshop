@@ -108,7 +108,7 @@ cat variable-and-host.yml
 conjur policy load root variable-and-host.yml | tee roles.json
 ````
 
-## Get machine ID API key for login
+## Get API key for Machine ID login
 ````
 api_key=$(jq -r '.created_roles | .[].api_key' roles.json)
 ````
