@@ -16,7 +16,7 @@
 ## \<In a shell window\>
 
 ## Create a working directory
-````bash
+````
 mkdir workshop
 cd workshop
 ````
