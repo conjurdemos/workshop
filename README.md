@@ -39,7 +39,7 @@ docker-compose run conjur
 conjur init -u https://eval.conjur.org -a <your-account-ID-from-browser>
 ````
 
-## Login as admin user – paste API key when prompted
+## Login as admin user – paste API key when prompted (you won't see it)
 ````
 conjur authn login -u admin
 ````
@@ -131,7 +131,7 @@ echo $SECRET
 
 ## Retrieve the secret with Summon into a mmapped file
 ````
-summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECRET"
+summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECRET; echo"
 ````
 
 ## Show that the value is truly ephemeral
