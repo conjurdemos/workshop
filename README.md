@@ -16,10 +16,10 @@
 ## \<In a shell window\>
 
 ## Create a working directory
-```bash
+````bash
 mkdir workshop
 cd workshop
-```
+````
 
 ## Download docker-compose.yml file
 - curl -k -o docker-compose.yml https://www.conjur.org/get-started/eval/docker-compose.yml
