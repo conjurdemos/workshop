@@ -1,4 +1,4 @@
-## CyberArk Conjur Open Source Lab
+#                     CyberArk Conjur Open Source Lab
 
 
 # 1) Create an account:
@@ -7,7 +7,7 @@
 
 ## Go to https://www.conjur.org/get-started/try-conjur.html
  - Create an account.
- - Stay on this page when the account info is displayed.
+ - Leave this page open when the account info is displayed.
  - You will need the Account ID and API key.
 
 
@@ -72,7 +72,7 @@ conjur variable values add eval/secret ${secret_val}
 
 ## Fetch the value you just stored:
 ````
-conjur variable value eval/secret
+conjur variable value eval/secret; echo
 ````
 
 
