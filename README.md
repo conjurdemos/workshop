@@ -44,7 +44,7 @@ conjur policy load root variable-and-host.yml | tee roles.json
 ## Get machine ID API key for login
 api_key=$(jq -r '.created_roles | .[].api_key' roles.json')
 
-## Authenticate & log in as the machine 
+## Authenticate & log in as the machine
 conjur authn login -u host/eval/machine -p ${api_key}
 
 ## Fetch the secret as the Machine ID you created
