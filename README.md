@@ -35,55 +35,83 @@ docker-compose run conjur
 # 3) Initialize the client environment
 
 ## Initialize client resource files
-- conjur init -u https://eval.conjur.org -a \<your-account-ID-from-browser\>
+````
+conjur init -u https://eval.conjur.org -a \<your-account-ID-from-browser\>
+````
 
 ## Login as admin user – paste API key when prompted
-- conjur authn login -u admin
+````
+conjur authn login -u admin
+````
 
 
 # 4) Create and load a policy that defines a secret
 
 ##  Download and load one-variable.yml
-- curl -k -o one-variable.yml https://www.conjur.org/get-started/eval/one-variable.yml
+````
+curl -k -o one-variable.yml https://www.conjur.org/get-started/eval/one-variable.yml
+````
 
 ## Load the policy
-- conjur policy load root one-variable.yml
+````
+conjur policy load root one-variable.yml
+````
 
 
 # 5) Store and fetch a secret according to policy
 
 ## Create a value:
-- secret_val=$(openssl rand -hex 12)
+````
+secret_val=$(openssl rand -hex 12)
+````
 
 ## Store the value in the secret defined by the “eval” policy:
-- conjur variable values add eval/secret ${secret_val}
+````
+conjur variable values add eval/secret ${secret_val}
+````
 
 ## Fetch the value you just stored:
-- conjur variable value eval/secret
+````
+conjur variable value eval/secret
+````
 
 
 # 6) Create a machine identity
 
 ## Download the variable-and-host.yml policy
-- curl -k -o variable-and-host.yml https://www.conjur.org/get-started/eval/variable-and-host.yml
+````
+curl -k -o variable-and-host.yml https://www.conjur.org/get-started/eval/variable-and-host.yml
+````
 
 ## Load the variable-and-host.yml policy
-- conjur policy load root variable-and-host.yml | tee roles.json
+````
+conjur policy load root variable-and-host.yml | tee roles.json
+````
 
 ## Get machine ID API key for login
-- api_key=$(jq -r '.created_roles | .[].api_key' roles.json)
+````
+api_key=$(jq -r '.created_roles | .[].api_key' roles.json)
+````
 
 ## Authenticate & log in as the machine 
-- conjur authn login -u host/eval/machine -p ${api_key}
+````
+conjur authn login -u host/eval/machine -p ${api_key}
+````
 
 
 # 7) Machine Identity authentication and authorization
 
 ## Fetch the secret as the Machine ID you created
-- conjur variable value eval/secret
+````
+conjur variable value eval/secret
+````
 
 ## Create a new value:
-- secret=$(openssl rand -hex 12)
+````
+secret=$(openssl rand -hex 12)
+````
 
 ## Now attempt to modify the secret as the Machine ID:
-- conjur variable values add eval/secret ${secret}
+````
+conjur variable values add eval/secret ${secret}
+````
