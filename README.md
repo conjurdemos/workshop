@@ -1,5 +1,8 @@
 # CyberArk Conjur Open Source Lab
 
+## In your browser, go to https://www.conjur.org/get-started/try-conjur.html and create an account. Stay on this page when the account info is displayed, you will need the Account ID and API key.
+
+
 ## Create a working directory
 mkdir –p <path>/conjur-eval
 cd <path>/conjur-eval
@@ -10,11 +13,8 @@ curl -k -o docker-compose.yml https://www.conjur.org/get-started/eval/docker-com
 ## Start CLI client container - this may take a while
 docker-compose run conjur
 
-## Set “account” environment variable
-account=“you@yourcompany.com”
-
 ## Initialize client resource files
-conjur init -u https://eval.conjur.org -a ${account}
+conjur init -u https://eval.conjur.org -a <Account-ID-from-browser>
 
 ## Login as admin user – paste API key when prompted
 conjur authn login -u admin
