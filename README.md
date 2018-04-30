@@ -112,7 +112,7 @@ conjur policy load root variable-and-host.yml | tee roles.json
 ````
 api_key=$(jq -r '.created_roles | .[].api_key' roles.json)
 ````
-#### To rotate the host API key
+#### (To rotate the host API key)
 ````
 api_key=$(conjur host rotate_api_key)
 ````
