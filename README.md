@@ -44,10 +44,15 @@ conjur init -u https://eval.conjur.org -a <your-account-ID-from-browser>
 conjur authn login -u admin
 ````
 
+## List objects in Conjur 
+````
+conjur list
+````
+
 
 # 4) Create and load a policy that defines a secret
 
-##  Download and load one-variable.yml
+##  Download the one-variable.yml policy file
 ````
 curl -k -o one-variable.yml https://www.conjur.org/get-started/eval/one-variable.yml
 ````
@@ -55,6 +60,11 @@ curl -k -o one-variable.yml https://www.conjur.org/get-started/eval/one-variable
 ## Load the policy
 ````
 conjur policy load root one-variable.yml
+````
+
+## List objects in Conjur now
+````
+conjur list
 ````
 
 
@@ -98,6 +108,11 @@ api_key=$(jq -r '.created_roles | .[].api_key' roles.json)
 conjur authn login -u host/eval/machine -p ${api_key}
 ````
 
+## List objects in Conjur now
+````
+conjur list
+````
+
 
 # 7) Machine Identity authentication and authorization
 
@@ -114,6 +129,11 @@ secret=$(openssl rand -hex 12)
 ## Now attempt to modify the secret as the Machine ID:
 ````
 conjur variable values add eval/secret ${secret}
+````
+
+## Look at permissions for Machine ID - verify no update permission
+````
+cat variable-and-host.yml
 ````
 
 
