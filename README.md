@@ -73,7 +73,7 @@ conjur list
 
 ## Create a value:
 ````
-secret_val=$(openssl rand -hex 12)
+secret_val=$(openssl rand -hex 12); echo $secret_val
 ````
 
 ## Store the value in the secret defined by the “eval” policy:
@@ -129,12 +129,12 @@ conjur variable value eval/secret; echo
 
 ## Create a new value:
 ````
-secret=$(openssl rand -hex 12)
+secret_val=$(openssl rand -hex 12); echo $secret_val
 ````
 
 ## Now attempt to modify the secret as the Machine ID:
 ````
-conjur variable values add eval/secret ${secret}
+conjur variable values add eval/secret ${secret_val}
 ````
 
 ## Look at permissions for Machine ID - verify no update permission
