@@ -55,7 +55,10 @@
 
 # 6) Create a machine identity
 
-## Download and load variable-and-host.yml (from demo page)
+## Download the variable-and-host.yml policy
+- curl -k -o variable-and-host.yml https://www.conjur.org/get-started/eval/variable-and-host.yml
+
+## Load the variable-and-host.yml policy
 - conjur policy load root variable-and-host.yml | tee roles.json
 
 ## Get machine ID API key for login
