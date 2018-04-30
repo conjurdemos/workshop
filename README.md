@@ -22,10 +22,14 @@ cd workshop
 ````
 
 ## Download docker-compose.yml file
-- curl -k -o docker-compose.yml https://www.conjur.org/get-started/eval/docker-compose.yml
-
+````
+curl -k -o docker-compose.yml https://www.conjur.org/get-started/eval/docker-compose.yml
+````
+ 
 ## Start CLI client container - this may take a while
-- docker-compose run conjur
+````
+docker-compose run conjur
+````
 
 
 # 3) Initialize the client environment
