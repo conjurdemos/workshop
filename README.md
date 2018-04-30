@@ -155,14 +155,14 @@ summon --yaml 'SECRET: !var eval/secret' bash -c "echo \$SECRET"
 echo $SECRET
 ````
 
-## Retrieve the secret with Summon into a mmapped file
+## Retrieve the secret with Summon into a memory mapped file
 ````
 summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECRET; echo"
 ````
 
 ## Show that the file is ephemeral
 ````
-ls $SECRET
+cat $SECRET
 ````
 
 ---
