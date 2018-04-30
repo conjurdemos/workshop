@@ -26,7 +26,7 @@
 # 3) Initialize the client environment
 
 ## Initialize client resource files
-- conjur init -u https://eval.conjur.org -a \<Account-ID-from-browser\>
+- conjur init -u https://eval.conjur.org -a \<your-account-ID-from-browser\>
 
 ## Login as admin user – paste API key when prompted
 - conjur authn login -u admin
