@@ -1,6 +1,10 @@
 # CyberArk Conjur Open Source Lab
 
-## In your browser, go to https://www.conjur.org/get-started/try-conjur.html and create an account. Stay on this page when the account info is displayed, you will need the Account ID and API key.
+## In your browser:
+ - Go to https://www.conjur.org/get-started/try-conjur.html
+ - Create an account.
+ - Stay on this page when the account info is displayed.
+ - You will need the Account ID and API key.
 
 
 ## Create a working directory
