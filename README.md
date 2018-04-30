@@ -115,3 +115,27 @@ secret=$(openssl rand -hex 12)
 ````
 conjur variable values add eval/secret ${secret}
 ````
+
+
+# 8) Using Summon for secrets injection into variables
+
+## Retrieve the secret with Summon into an environment variable
+````
+summon --yaml 'SECRET: !var eval/secret' bash -c "echo \$SECRET"
+````
+
+## Show that the value is truly ephemeral
+````
+echo $SECRET
+````
+
+## Retrieve the secret with Summon into a mmapped file
+````
+summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECRET"
+````
+
+## Show that the value is truly ephemeral
+````
+echo $SECRET; ls $SECRET
+````
+
