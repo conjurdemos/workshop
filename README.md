@@ -139,3 +139,9 @@ summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECR
 ls $SECRET
 ````
 
+# Next steps:
+## Try running the Conjur server locally:
+- https://www.conjur.org/get-started/install-conjur.html
+## Check out Summon:
+- https://cyberark.github.io/summon/
+
