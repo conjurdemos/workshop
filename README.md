@@ -162,7 +162,7 @@ summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECR
 
 ## Show that the file is ephemeral
 ````
-cat $SECRET
+echo $SECRET
 ````
 
 ---
