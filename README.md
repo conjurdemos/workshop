@@ -39,7 +39,7 @@ docker-compose run conjur
 conjur init -u https://eval.conjur.org -a <your-account-id>
 ````
 
-## Login as admin user – paste API key when prompted (you won't see it)
+## Login as admin user, paste API key when prompted (you won't see it)
 ````
 conjur authn login -u admin
 ````
@@ -47,6 +47,11 @@ conjur authn login -u admin
 ## List objects in Conjur 
 ````
 conjur list
+````
+
+## See who you are logged in as
+````
+conjur authn whoami
 ````
 
 
@@ -75,7 +80,7 @@ conjur list
 secret_val=$(openssl rand -hex 12); echo $secret_val
 ````
 
-## Store the value in the secret defined by the “eval” policy:
+## Store the value in the secret defined by the "eval" policy:
 ````
 conjur variable values add eval/secret ${secret_val}
 ````
@@ -107,6 +112,9 @@ conjur policy load root variable-and-host.yml | tee roles.json
 ````
 api_key=$(jq -r '.created_roles | .[].api_key' roles.json)
 ````
+#### To rotate the host API key
+api_key=$(conjur host rotate_api_key)
+
 
 ## Authenticate & log in as the machine 
 ````
@@ -116,6 +124,11 @@ conjur authn login -u host/eval/machine -p ${api_key}
 ## List objects in Conjur now
 ````
 conjur list
+````
+
+## See who you are logged in as
+````
+conjur authn whoami
 ````
 
 
