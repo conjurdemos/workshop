@@ -124,7 +124,7 @@ conjur variable values add eval/secret ${secret}
 summon --yaml 'SECRET: !var eval/secret' bash -c "echo \$SECRET"
 ````
 
-## Show that the value is truly ephemeral
+## Show that the value is ephemeral
 ````
 echo $SECRET
 ````
@@ -134,8 +134,8 @@ echo $SECRET
 summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECRET; echo"
 ````
 
-## Show that the value is truly ephemeral
+## Show that the file is ephemeral
 ````
-echo $SECRET; ls $SECRET
+ls $SECRET
 ````
 
