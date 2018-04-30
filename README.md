@@ -3,11 +3,9 @@
 
 # 1) Create an account:
 
-## \<In a browser window\>
-
-## Go to https://www.conjur.org/get-started/try-conjur.html
+## In a new tab/window, go to: https://www.conjur.org/get-started/try-conjur.html
  - Create an account.
- - Leave this page open when the account info is displayed.
+ - Leave page open when account info is displayed.
  - You will need the Account ID and API key.
 
 
@@ -34,7 +32,7 @@ docker-compose run conjur
 
 # 3) Initialize the client environment
 
-## Initialize client resource files
+## Initialize client resource files - answer "yes" when prompted
 ````
 conjur init -u https://eval.conjur.org -a <your-account-id>
 ````
@@ -62,7 +60,12 @@ conjur authn whoami
 curl -k -o one-variable.yml https://www.conjur.org/get-started/eval/one-variable.yml
 ````
 
-## Load the policy
+## Take a look at the polcy - just defines one variable
+````
+cat one-variable.yml
+````
+
+## Load the policy - note version number
 ````
 conjur policy load root one-variable.yml
 ````
@@ -98,7 +101,7 @@ conjur variable value eval/secret; echo
 curl -k -o variable-and-host.yml https://www.conjur.org/get-started/eval/variable-and-host.yml
 ````
 
-## Look at permissions for Machine ID - verify no update permission
+## Look at privileges for Machine ID - verify no update privileges
 ````
 cat variable-and-host.yml
 ````
@@ -175,7 +178,7 @@ summon --yaml 'SECRET: !var:file eval/secret' bash -c "echo \$SECRET; cat \$SECR
 
 ## Show that the file is ephemeral
 ````
-echo $SECRET
+ls /dev/shm/.summon*
 ````
 
 ---
